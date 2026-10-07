@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecNm Chihuahua2 - Consulta de Datos</title>
+    <link rel="stylesheet" href="./formulario.css">
+    <style>
+        .seccion-datos {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .seccion-datos h2 {
+            color: #040cf0;
+            margin-top: 0;
+            border-bottom: 2px solid #040cf0;
+            padding-bottom: 5px;
+        }
+        .dato-item {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .dato-item strong {
+            color: #333;
+            display: inline-block;
+            width: 180px;
+        }
+    </style>
+</head>
+<body>
+<header>
+
+
+
+    <a href="./formulario.html">          <img src="./fotos/yoyo2.PNG" alt="Foto de perfil"></a>
+    <h1>Adrian Mateo Rodriguez H.</h1>
+
+
+
+</header>
+<div class="content">
+<nav>
+
+
+
+    <img id="imgheader" src="./fotos/alien.png" alt="Icono usuario">
+
+
+
+
+    <a href="./DatosPersonales.html">Datos Personales</a>
+    <a href="./datosAcademicos.html"><img src="./fotos/iconoeducacion.jpg" alt="Icono educación">Datos Academicos</a>
+    <a href="./verDatos.html"><img src="./fotos/iconoeducacion.jpg" alt="Icono educación">Ver Datos Guardados</a>
+
+
+
+
+</nav>
+<main>
+    <h1>Registro General del Estudiante</h1>
+    <p>Aquí puedes consultar todos los datos personales y académicos que han sido guardados.</p>
+
+    <!-- Contenedor de Datos Personales -->
+    <div class="seccion-datos">
+        <h2>Datos Personales</h2>
+        <div id="infoPersonales">
+            <p>Cargando información...</p>
+        </div>
+    </div>
+
+    <!-- Contenedor de Datos Académicos -->
+    <div class="seccion-datos">
+        <h2>Datos Académicos</h2>
+        <div id="infoAcademicos">
+            <p>Cargando información...</p>
+        </div>
+    </div>
+</main>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // Mostrar Datos Personales
+        const personales = JSON.parse(localStorage.getItem('datosPersonalesEstudiante'));
+        const contenedorPersonales = document.getElementById('infoPersonales');
+        
+        if (personales && (personales.nombre || personales.apellido || personales.telefono || personales.direccion)) {
+            contenedorPersonales.innerHTML = `
+                <div class="dato-item"><strong>Nombre:</strong> ${personales.nombre || 'No registrado'}</div>
+                <div class="dato-item"><strong>Apellido:</strong> ${personales.apellido || 'No registrado'}</div>
+                <div class="dato-item"><strong>Teléfono:</strong> ${personales.telefono || 'No registrado'}</div>
+                <div class="dato-item"><strong>Dirección:</strong> ${personales.direccion || 'No registrado'}</div>
+            `;
+        } else {
+            contenedorPersonales.innerHTML = `<p style="color: #e74c3c;">No hay datos personales guardados todavía.</p>`;
+        }
+
+        // Mostrar Datos Académicos
+        const academicos = JSON.parse(localStorage.getItem('datosAcademicosEstudiante'));
+        const contenedorAcademicos = document.getElementById('infoAcademicos');
+        
+        if (academicos && (academicos.nc || academicos.car || academicos.esp || academicos.sem || academicos.ce)) {
+            contenedorAcademicos.innerHTML = `
+                <div class="dato-item"><strong>Número de Control:</strong> ${academicos.nc || 'No registrado'}</div>
+                <div class="dato-item"><strong>Carrera:</strong> ${academicos.car || 'No registrado'}</div>
+                <div class="dato-item"><strong>Especialidad:</strong> ${academicos.esp || 'No registrado'}</div>
+                <div class="dato-item"><strong>Semestre:</strong> ${academicos.sem || 'No registrado'}</div>
+                <div class="dato-item"><strong>Correo Electrónico:</strong> ${academicos.ce || 'No registrado'}</div>
+            `;
+        } else {
+            contenedorAcademicos.innerHTML = `<p style="color: #e74c3c;">No hay datos académicos guardados todavía.</p>`;
+        }
+    });
+</script>
+</body>
+</html>

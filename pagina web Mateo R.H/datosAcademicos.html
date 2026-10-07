@@ -1,0 +1,52 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecNm Chihuahua2 - Datos Académicos</title>
+    <link rel="stylesheet" href="./formulario.css">
+</head>
+<body>
+<header>
+    <a href="./formulario.html"><img src="./fotos/yoyo2.PNG" alt="Foto de perfil"></a>
+    <h1>Adrian Mateo Rodriguez H.</h1>
+</header>
+<div class="content">
+<nav>
+    <img id="imgheader" src="./fotos/alien.png" alt="Icono usuario">
+    <a href="./DatosPersonales.html">Datos Personales</a>
+    <a href="./datosAcademicos.html"><img src="./fotos/iconoeducacion.jpg" alt="Icono educación">Datos Academicos</a>
+    <a href="./verDatos.html"><img src="./fotos/iconoeducacion.jpg" alt="Icono educación">Ver Datos Guardados</a>
+</nav>
+<main>
+    <h1>Datos Académicos</h1>
+    <form id="formAcademicos">
+        <label for="nc">Numero de control</label><input id="nc" name="nc" type="text"><br><br>
+        <label for="car">Carrera</label><input id="car" name="car" type="text"><br><br>
+        <label for="esp">Especialidad</label><input id="esp" name="esp" type="text"><br><br>
+        <label for="sem">Semestre</label><input id="sem" name="sem" type="text"><br><br>
+        <label for="ce">Correo Electronico</label><input id="ce" name="ce" type="text"><br><br>
+        
+        <button type="button" id="btnGuardar" style="padding: 10px 20px; background-color: #fc02bd; color: white; border: none; border-radius: 4px; cursor: pointer;">Guardar Datos</button>
+    </form>
+</main>
+</div>
+
+<script>
+    const STORAGE_KEY = 'datosAcademicosEstudiante';
+
+    document.getElementById('btnGuardar').addEventListener('click', () => {
+        const datos = {
+            nc: document.getElementById('nc').value,
+            car: document.getElementById('car').value,
+            esp: document.getElementById('esp').value,
+            sem: document.getElementById('sem').value,
+            ce: document.getElementById('ce').value
+        };
+
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(datos));
+        alert('¡Datos académicos guardados correctamente!');
+        document.getElementById('formAcademicos').reset();
+    });
+</script>
+</body>
+</html>

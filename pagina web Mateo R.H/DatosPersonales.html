@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecNm Chihuahua2 - Datos Personales</title>
+    <link rel="stylesheet" href="./formulario.css">
+</head>
+<body>
+<header>
+    <a href="./formulario.html"><img src="./fotos/yoyo2.PNG" alt="Foto de perfil"></a>
+    <h1>Adrian Mateo Rodriguez</h1>
+</header>
+<div class="content">
+<nav>
+    <img id="imgheader" src="./fotos/alien.png" alt="Icono usuario">
+    <a href="./DatosPersonales.html">Datos Personales</a>
+    <a href="./datosAcademicos.html"><img src="./fotos/iconoeducacion.jpg" alt="Icono educación">Datos Academicos</a>
+    <a href="./verDatos.html"><img src="./fotos/iconoeducacion.jpg" alt="Icono educación">Ver Datos Guardados</a>
+</nav>
+<main>
+    <h1>Datos Personales</h1>
+    <form id="formPersonales">
+        <label for="nombre">Nombre</label><input id="nombre" name="nombre" type="text"><br><br>
+        <label for="apellido">Apellido</label><input id="apellido" name="apellido" type="text"><br><br>
+        <label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="text"><br><br>
+        <label for="direccion">Dirección</label><input id="direccion" name="direccion" type="text"><br><br>
+        
+        <button type="button" id="btnGuardarPersonales" style="padding: 10px 20px; background-color: #4f70be; color: white; border: none; border-radius: 4px; cursor: pointer;">Guardar Datos</button>
+    </form>
+</main>
+</div>
+
+<script>
+    const STORAGE_KEY_P = 'datosPersonalesEstudiante';
+
+    document.getElementById('btnGuardarPersonales').addEventListener('click', () => {
+        const datos = {
+            nombre: document.getElementById('nombre').value,
+            apellido: document.getElementById('apellido').value,
+            telefono: document.getElementById('telefono').value,
+            direccion: document.getElementById('direccion').value
+        };
+
+        localStorage.setItem(STORAGE_KEY_P, JSON.stringify(datos));
+        alert('¡Datos personales guardados correctamente!');
+        document.getElementById('formPersonales').reset();
+    });
+</script>
+</body>
+</html>
