@@ -1,0 +1,217 @@
+
+
+
+
+
+
+
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fffefe;
+}
+
+
+
+
+
+
+
+
+/* Encabezado superior */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+/* Foto de perfil principal en el encabezado (Header) - Circular */
+header img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+
+
+
+/* Contenedor principal que divide el menú y el contenido */
+.content {
+    display: flex;
+    min-height: calc(100vh - 70px);
+}
+
+
+
+
+
+/* Menú de navegación lateral */
+nav {
+    width: 250px;
+    background-color: #994fbe;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+
+
+
+
+
+
+/* Imagen del ALIEN */
+#imgheader {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+/* Iconos del menú lateral */
+nav img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* Iconos de educación y demás en el menú lateral (más grandes y circulares) */
+nav img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+             
+
+
+                   /* Sección principal de formularios */
+main {
+    flex: 1;
+    padding: 30px;
+    background-color: #ffffff;
+}
+
+main h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+main label {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+    color: #333;
+}
+
+main input {
+    padding: 8px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+input[type="text"]:hover {
+    background-color: #dce6ff;
+    border: 2px solid  #994fbe;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    background-color: #eef3ff;
+    outline: none;
+}
+
+
+
+
+
+
+-------------------------------------------------------------------------
+
+
+
+               /* Tabla del historial académico */
+
+.tabla-academica {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.tabla-academica th,
+.tabla-academica td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.tabla-academica th {
+    background-color: #fc02bd;
+    color: white;
+}
+
+.tabla-academica input {
+    width: 90%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.tabla-academica input:focus {
+    outline: 2px solid #fc02bd;
+    border-color: #fc02bd;
+}
+
+#formAcademicos h2 {
+    margin-top: 25px;
+}
+
+                 /* Adaptación para pantallas pequeñas */
+
+@media (max-width: 600px) {
+    .tabla-academica th,
+    .tabla-academica td {
+        padding: 5px;
+    }
+
+    .tabla-academica input {
+        width: 100%;
+        min-width: 60px;
+        padding: 5px;
+    }
+}
