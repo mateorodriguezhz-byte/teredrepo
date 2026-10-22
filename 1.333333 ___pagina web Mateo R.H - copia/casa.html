@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecNm Chihuahua2</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./formulario.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./formulario.js"></script>
+
+    <style>
+        :root {
+            --rosa: #e0bd5e;
+            --rosa-oscuro: #bae10e;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Encabezado */
+        header {
+            background: var(--rosa);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: .75rem 1.5rem;
+            min-height: 87px;
+        }
+
+        header span {
+            font-weight: 600;
+        }
+
+        header img {
+            height: 64px;
+            width: 64px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #fff;
+        }
+
+        .content {
+            flex: 1;
+        }
+
+        /* Tarjetas-botón */
+        .card-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            border: 0;
+            border-radius: 1rem;
+            background: #f2f2f2;
+            color: #000;
+            text-decoration: none;
+            transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+            font-family: inherit;
+        }
+
+        .card-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 .6rem 1.2rem rgba(0, 0, 0, .15);
+            background: #e9edf5;
+            color: #000;
+        }
+
+        .card-btn:focus-visible {
+            outline: 3px solid var(--rosa);
+            outline-offset: 3px;
+        }
+
+        .card-btn i {
+            color: var(--rosa);
+            font-size: 3.5rem;
+            line-height: 1;
+        }
+
+        .card-btn h2 {
+            color: var(--rosa-oscuro);
+            font-weight: 700;
+            margin: .75rem 0 .5rem;
+        }
+
+        .card-principal {
+            min-height: 270px;
+            box-shadow: 0 .4rem 1rem rgba(0, 0, 0, .12);
+        }
+
+        .card-principal i {
+            font-size: 4.5rem;
+        }
+
+        .card-principal h2 {
+            font-size: 1.9rem;
+        }
+
+        .card-secundaria {
+            min-height: 265px;
+            background: #f8f8f8;
+        }
+
+        .card-secundaria h2 {
+            font-size: 1.6rem;
+        }
+
+        footer {
+            font-size: .8rem;
+            padding: 1.5rem 0;
+        }
+
+        /* Al imprimir, ocultar los botones */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="./fotos/yoyo2.PNG" alt="Foto de perfil">
+        <span>ADRIAN MATEO RODRIGUEZ HERNANDEZ</span>
+    </header>
+
+    <div class="content">
+        <main class="container py-5" style="max-width: 1100px;">
+            <div class="row g-3 no-print">
+
+                <!-- Botón principal -->
+                <div class="col-12">
+                    <button type="button"
+                            class="card-btn card-principal"
+                            onclick="imprimirTablas()">
+                        <i class="bi bi-printer-fill"></i>
+                        <h2>Imprimir</h2>
+                        <p class="mb-0 fs-5">Imprime tu información</p>
+                    </button>
+                </div>
+
+                <!-- Botones secundarios -->
+                <div class="col-12 col-md-6">
+                    <a href="./DatosPersonales.html"
+                       class="card-btn card-secundaria">
+                        <i class="bi bi-person-lines-fill"></i>
+                        <h2>Datos personales</h2>
+                        <p class="mb-0 fs-5">
+                            Consulta y edita tus datos personales
+                        </p>
+                    </a>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <a href="./datosAcademicos.html"
+                       class="card-btn card-secundaria">
+                        <i class="bi bi-mortarboard-fill"></i>
+                        <h2>Datos académicos</h2>
+                        <p class="mb-0 fs-5">
+                            Consulta tu información académica
+                        </p>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Secciones de destino (opcional, puedes reemplazarlas por tus páginas) -->
+            <section id="datos-personales" class="mt-5">
+                <!-- contenido de datos personales -->
+            </section>
+
+            <section id="datos-academicos" class="mt-5">
+                <!-- contenido de datos académicos -->
+            </section>
+        </main>
+    </div>
+
+    <footer class="text-center">
+        Copyright © 2026 by <a href="#">iFix</a> -
+        <a href="#">Políticas de Privacidad</a>
+    </footer>
+
+</body>
+</html>
